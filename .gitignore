@@ -1,0 +1,65 @@
+# ==========================
+# Terraform
+# ==========================
+
+# Local Terraform directory
+.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Terraform plan files
+*.tfplan
+*.plan
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration
+.terraformrc
+terraform.rc
+
+# ==========================
+# Variable files (may contain secrets)
+# ==========================
+
+*.tfvars
+*.tfvars.json
+
+# Keep only example variable files
+!*.tfvars.example
+
+# ==========================
+# Environment files
+# ==========================
+
+.env
+.env.*
+
+# ==========================
+# IDE Files
+# ==========================
+
+.vscode/
+.idea/
+
+# ==========================
+# Operating System Files
+# ==========================
+
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Logs
+# ==========================
+
+*.log
