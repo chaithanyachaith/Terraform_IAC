@@ -19,3 +19,14 @@ variable "enable_versioning" {
   type        = bool
   default     = true
 }
+
+variable "subnets" {
+  description = "Subnet configuration"
+
+  type = list(object({
+    name   = string
+    cidr   = string
+    az     = string
+    public = bool
+  }))
+}
