@@ -27,3 +27,9 @@ module "s3" {
   environment       = var.environment
   enable_versioning = var.enable_versioning
 }
+module "subnets" {
+  source = "./modules/subnets"
+
+  vpc_id  = module.vpc.vpc_id
+  subnets = var.subnets
+}
