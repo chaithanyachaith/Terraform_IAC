@@ -30,3 +30,7 @@ variable "subnets" {
     public = bool
   }))
 }
+variable "igw_name" {
+  description = "Internet Gateway name"
+  type        = string
+}

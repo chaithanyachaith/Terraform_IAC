@@ -7,9 +7,7 @@ terraform {
     }
   }
 }
-provider "aws" {
-  region = "ap-south-1"
-}
+
 
 module "vpc" {
   source = "./modules/vpc"
@@ -32,4 +30,12 @@ module "subnets" {
 
   vpc_id  = module.vpc.vpc_id
   subnets = var.subnets
+}
+
+
+module "internet_gateway" {
+  source = "./modules/igw"
+
+  vpc_id = module.vpc.vpc_id
+  name   = var.igw_name
 }
