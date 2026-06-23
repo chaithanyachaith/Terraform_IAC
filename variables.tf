@@ -38,3 +38,24 @@ variable "public_route_table_name" {
   description = "Name of the Public Route Table"
   type        = string
 }
+
+variable "eip_count" {
+  description = "Number of Elastic IPs"
+  type        = number
+}
+
+variable "eip_name" {
+  description = "Elastic IP Name"
+  type        = string
+}
+
+variable "nat_gateway_name" {
+
+  description = "NAT Gateway Name"
+
+  type = string
+}
+
+variable "private_route_table_name" {
+  type = string
+}
