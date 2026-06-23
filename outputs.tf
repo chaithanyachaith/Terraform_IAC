@@ -14,3 +14,7 @@ output "subnet_ids" {
 output "igw_id" {
   value = module.internet_gateway.igw_id
 }
+output "public_route_table_id" {
+  description = "Public Route Table ID"
+  value       = module.public_route_table.route_table_id
+}

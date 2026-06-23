@@ -39,3 +39,18 @@ module "internet_gateway" {
   vpc_id = module.vpc.vpc_id
   name   = var.igw_name
 }
+module "public_route_table" {
+
+  source = "./modules/public_route_table"
+
+  vpc_id = module.vpc.vpc_id
+
+  igw_id = module.internet_gateway.igw_id
+
+  public_subnet_ids = [
+    module.subnets.subnet_ids["public-1"],
+    module.subnets.subnet_ids["public-2"]
+  ]
+
+  route_table_name = "public-route-table"
+}
