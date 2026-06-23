@@ -34,3 +34,7 @@ variable "igw_name" {
   description = "Internet Gateway name"
   type        = string
 }
+variable "public_route_table_name" {
+  description = "Name of the Public Route Table"
+  type        = string
+}
