@@ -59,3 +59,62 @@ variable "nat_gateway_name" {
 variable "private_route_table_name" {
   type = string
 }
+
+variable "alb_sg_name" {
+  type = string
+}
+
+variable "ec2_sg_name" {
+  type = string
+}
+
+variable "rds_sg_name" {
+  type = string
+}
+
+variable "alb_name" {
+
+  description = "Application Load Balancer Name"
+
+  type = string
+}
+
+variable "target_group_name" {
+  type = string
+}
+
+variable "launch_template_name" {
+  type = string
+}
+
+variable "ami_id" {
+  type = string
+}
+
+variable "instance_type" {
+  type = string
+}
+
+variable "key_name" {
+  type = string
+}
+
+variable "user_data_file" {
+  type = string
+}
+
+variable "asg_name" {
+  type = string
+}
+
+variable "min_size" {
+  type = number
+}
+
+variable "max_size" {
+  type = number
+}
+
+variable "desired_capacity" {
+  type = number
+}
