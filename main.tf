@@ -204,3 +204,10 @@ module "rds" {
 
   rds_security_group_id = module.security_groups.rds_security_group_id
 }
+
+module "sns" {
+  source = "./modules/sns"
+
+  topic_name   = var.sns_topic_name
+  email_address = var.alert_email
+}
