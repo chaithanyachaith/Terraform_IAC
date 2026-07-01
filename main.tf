@@ -208,6 +208,13 @@ module "rds" {
 module "sns" {
   source = "./modules/sns"
 
-  topic_name   = var.sns_topic_name
+  topic_name    = var.sns_topic_name
   email_address = var.alert_email
+}
+
+module "cloudwatch" {
+  source = "./modules/cloudwatch"
+
+  dashboard_name          = var.dashboard_name
+  auto_scaling_group_name = module.auto_scaling.asg_name
 }

@@ -163,3 +163,8 @@ variable "alert_email" {
   description = "Email address for CloudWatch alerts"
   type        = string
 }
+
+variable "dashboard_name" {
+  description = "CloudWatch Dashboard Name"
+  type        = string
+}
