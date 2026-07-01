@@ -35,7 +35,6 @@ module "subnets" {
 
 module "internet_gateway" {
   source = "./modules/igw"
-
   vpc_id = module.vpc.vpc_id
   name   = var.igw_name
 }
@@ -177,4 +176,31 @@ module "auto_scaling" {
   max_size = var.max_size
 
   desired_capacity = var.desired_capacity
+}
+
+
+module "rds" {
+
+  source = "./modules/rds"
+
+  db_subnet_group_name = var.db_subnet_group_name
+
+  private_subnet_ids = [
+    module.subnets.subnet_ids["private-1"],
+    module.subnets.subnet_ids["private-2"]
+  ]
+
+  db_instance_identifier = var.db_instance_identifier
+
+  instance_class = var.instance_class
+
+  allocated_storage = var.allocated_storage
+
+  db_name = var.db_name
+
+  username = var.username
+
+  password = var.password
+
+  rds_security_group_id = module.security_groups.rds_security_group_id
 }
